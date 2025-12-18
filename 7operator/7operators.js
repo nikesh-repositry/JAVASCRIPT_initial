@@ -66,6 +66,7 @@ if((o || p )==2)              //logical OR if any of true it will true of procee
 if(!israining)                //logical NOT
     console.log("whether is ok now");
 console.log(!!o); //double not is generally used to convert any value into a boolean
+//it actually tells the if the value is truthy or falsy
 // logical NOT operator (!) is used to reverse the Boolean value of an expression. If the expression is true, ! will make it false, and if it’s false, ! will make it true.
 //short circuit concept
 // && → returns the first falsy value, or the last truthy value if none are falsy.
@@ -88,5 +89,6 @@ console.log(false || 0) //false and false
 console.log(44 || false) //true and false
 //if first is true and second is false then return true = 44
 console.log("-------------------------------------------------------------------------");
+
 
 //BITWISE OPERATORS---------
