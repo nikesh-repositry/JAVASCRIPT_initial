@@ -1,1 +1,13 @@
-
+basically operators are the special symbols which are used to perform operations between and with
+variables and values.
+there are basically 10 types of operators in js
+1. arithemetic = perform basic mathematical calculation on number
+2. assignment = assign values to variables oftern combining with arithmetic or bitwise operation
+3. comparison = compare two values and return a boolean
+4. logical = used with boolean values to combine or invert conditions
+5. bitwise = operate directly on the binary representation of numbers
+6. string = used to manipulate text
+7. unary = work on a single operand 
+8. conditional(ternary) = the only ternary operator in js which is shorthand for if..else
+9. relational = check relationships between objects and properties
+10. comma = allow multiple expressions to be evaluated, returning the last one.
