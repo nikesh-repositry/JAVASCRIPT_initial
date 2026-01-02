@@ -66,15 +66,16 @@ if((o || p )==2)              //logical OR if any of true it will true of procee
     console.log("yes once ");
 if(!israining)                //logical NOT
     console.log("whether is ok now");  
-console.log(!israining)     //true
-console.log(!!israining)     //false
+console.log(!israining)     
+console.log(!!israining)     
 console.log(!o)    //this is the inverter where this first convert the value into boolean and then return the opposite boolean value
 //single ! is used to check if something does not exist
 console.log(!!o); //this return the actual boolean value . first the inverter happens and then flip it back to its original truthiness
 //double !! is used when you want to convert the value into a pure true of false value
 //double not is generally used to convert any value into a boolean
 // logical NOT operator (!) is used to reverse the Boolean value of an expression. If the expression is true, ! will make it false, and if it’s false, ! will make it true.
-
+console.log(Boolean(israining))
+//rather than !! Boolean() func is used because it is explicit, self explanatory and more maintainable
 console.log("short circuit -------------------------------------------------------------------------------------------------------------------------------------------------------")
 //short circuit concept
 // && → returns the first falsy value, or the last truthy value if none are falsy.
