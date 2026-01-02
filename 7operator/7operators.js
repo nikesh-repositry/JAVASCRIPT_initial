@@ -97,6 +97,71 @@ console.log(false || 0) //false and false
 //if both are false then it returns second false = 0
 console.log(44 || false) //true and false
 //if first is true and second is false then return true = 44
-console.log("-------------------------------------------------------------------------");
+console.log("bitwise operators-------------------------------------------------------------------------");
 
 //BITWISE OPERATORS---------
+//bitwise operator used to manipulate the single bit of data in binary level to perform operations
+//the bitwise operators first convert the values into binary and then perform operations
+/* JavaScript is loosely typed, so it will coerce values before applying bitwise operations:
+Strings  → converted to numbers (via Number()), then to 32-bit signed integers.
+Booleans → true becomes 1, false becomes 0.
+Floats   → truncated to 32-bit integers.
+Non-numeric strings → become NaN, which is then treated as 0. */
+//                                           bitwise AND & 
+//this returns 1 only if both bits are 1 otherwise 0
+console.log(3&2&1) //0
+console.log(5 & 2) //0
+console.log(2&5) //0
+//                                           bitwise OR |
+//this returns 1 if at least one of the bits is 1
+console.log(2|3) //3
+console.log(2|3|4) //7
+//                                           bitwise XOR ^
+//returns 1 if the bits are different and if they both are the same bits then it returns 0
+console.log(7^5) //2
+console.log(3^7) //4
+console.log(3^7^4) //0
+//                                           bitwise NOT ~
+//inverts all bits which is 0 becomes 1 and 1 becomes 0
+console.log(~5);   // -6
+// Explanation: 5 in binary = 00000000000000000000000000000101
+// Bitwise NOT → 11111111111111111111111111111010
+// Which is -6 in two's complement form
+console.log(~0);   // -1
+console.log(~-1);  // 0
+console.log(~~5)  //5
+console.log(~~~5) //-6
+//                                           left shift
+//shifts all bits to the left by the specified number of positions and zeroes are filled in from the right.
+console.log(5 << 1) //10
+// formula = 5*2^1
+// Operation: 5 << 1
+// 5:   ...000101
+// Shift left by 1:
+// Res: ...001010  (This is decimal 10)
+console.log(5<<2) //20
+//formula = 5*2^2
+console.log(5<<3) //40
+//formula = 5*2^3 (but this formula has limits)
+console.log(5<<1<<1) //20 
+//formula = 5*2^1=10 then 10*2^1=20
+//                                             right shift
+//shifts all bits to the right  
+//it preserve the sigle bit(the leftmost bit) if the number was negative, it stays negative
+console.log(5>>1) //2
+// 5:   ...000101
+// Shift right by 1 (the last '1' falls off):
+// Res: ...000010  (This is decimal 2)
+console.log(5>>1>>1) //1
+//                                            zero fill right shift >>>
+// shifts bits to the right but does not preserve the sign. it always pushes zeros in from the left
+//for positive numbers >> and >>> are the same
+//for negative numbers >>> changes the sign bit to 0, causing the number to become a huge positive integer
+// Operation: -5 >>> 1
+// -5 in binary (32-bit): 11111111111111111111111111111011
+// Shift right by 1, fill left with 0:
+// Result:                01111111111111111111111111111101
+
+console.log(5 >>> 1);  // Output: 2 (Same as regular shift)
+console.log(-5 >>> 1); // Output: 2147483645 (Huge number!)
+
