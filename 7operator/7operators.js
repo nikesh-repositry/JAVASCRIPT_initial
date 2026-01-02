@@ -11,7 +11,7 @@ console.log(a*b);//simple multiplication
 console.log(a/b);//simle division
 console.log(a%b);//modulus it returns the remainder
 console.log(a**b);//this is not an arithmetic operator but it is used to find power of number
-console.log("-----------------------------------------------------------------------");
+console.log(" assignment operator-----------------------------------------------------------------------");
 
 //ASSIGNMENT OPERATORS                                       MOEE IN ASSIGNMENT OPERATORS IN W3S
 //these operators are used to assign values to variable
@@ -30,28 +30,30 @@ console.log(x); //1   node 7operators.js
 console.log(x**=2) //1 (power of x to 2)
 x=5 //reassigned the value x for further operations
 console.log(x<<=1)
-console.log("-----------------------------------------------------------------------");
+console.log("comparison operator-----------------------------------------------------------------------");
 
 //COMPARISON OPERATORS
 //these operators are used to compare values
 let u="2";
 let v=2;
-console.log(u==v);   //equal to
-console.log(u===v);  //strict equal to (value and type)
+console.log(u==v);   //equal to (loose and type conversion allowed which means 5=="5" is true)
+console.log(u===v);  //strict equal to (value and type) 5==="5" is false
 console.log(u!=v);   //not equal to 
 console.log(u!==v);  //strict not equal to (value and type)
 console.log(u>v);    //greater than
 console.log(u<v);    //less than
 console.log(u>=v);   //greater then or equal to 
 console.log(u<=v);   //less than or equal to 
-console.log("------------------------------------------------------------------------");
+console.log("string operator------------------------------------------------------------------------");
 
 //STRING OPERATORS
 //the + operator is used to concatenate strings
 let str1="nikesh";
 let str2="kumar";
-let result = str1 + " " + str2;
+let result = str1 + " " + str2; //concatenation 
 console.log(result);
+console.log(str1+=str2) //it actually append the string
+console.log("logical operator_______________________________________________________________________")
 
 //LOGICAL OPERATORS
 //these operators are used to combine conditional statements
@@ -63,9 +65,17 @@ if((o && p)>0)                //logical AND if both true it is true or proceed f
 if((o || p )==2)              //logical OR if any of true it will true of proceed further
     console.log("yes once ");
 if(!israining)                //logical NOT
-    console.log("whether is ok now");
-console.log(!!o); //double not is generally used to convert any value into a boolean
+    console.log("whether is ok now");  
+console.log(!israining)     //true
+console.log(!!israining)     //false
+console.log(!o)    //this is the inverter where this first convert the value into boolean and then return the opposite boolean value
+//single ! is used to check if something does not exist
+console.log(!!o); //this return the actual boolean value . first the inverter happens and then flip it back to its original truthiness
+//double !! is used when you want to convert the value into a pure true of false value
+//double not is generally used to convert any value into a boolean
 // logical NOT operator (!) is used to reverse the Boolean value of an expression. If the expression is true, ! will make it false, and if it’s false, ! will make it true.
+
+console.log("short circuit -------------------------------------------------------------------------------------------------------------------------------------------------------")
 //short circuit concept
 // && → returns the first falsy value, or the last truthy value if none are falsy.
 console.log(0n && 1) //false and true 
