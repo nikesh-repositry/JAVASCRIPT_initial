@@ -11,3 +11,8 @@ there are basically 10 types of operators in js
 8. conditional(ternary) = the only ternary operator in js which is shorthand for if..else
 9. relational = check relationships between objects and properties
 10. comma = allow multiple expressions to be evaluated, returning the last one.
+
+>arithemetic operator performs the basic mathematical calculation 
+>assignment operator consist for both arithemetic and bitwise operator
+>comparison operator is simple in use just to compare with any aspect
+>string operator consist of concatenation and += which is basically perform append operation
