@@ -10,10 +10,6 @@ console.log(a-b);//simple substraction
 console.log(a*b);//simple multiplication
 console.log(a/b);//simle division
 console.log(a%b);//modulus it returns the remainder
-console.log(a++);//post increment it is first print a then increment it by 1 and if i write console.log(a); after 12 no. code then it will print 8
-console.log(++a);//pre increment it will increment by one first then print a 
-console.log(b--);//post decrement
-console.log(--b);//pre decrement
 console.log(a**b);//this is not an arithmetic operator but it is used to find power of number
 console.log("-----------------------------------------------------------------------");
 
@@ -22,15 +18,18 @@ console.log("-------------------------------------------------------------------
 let x=4;        //= used to assign value
 console.log(x);
 x+=4;           //x+=4 is equal to x=x+4
-console.log(x);
+console.log(x); //8
 x-=4;           //x -= y (equivalent to x = x - y)
-console.log(x);
+console.log(x); //4
 x*=4;           //x *= y (equivalent to x = x * y)
-console.log(x);
+console.log(x); //16
 x/=4;           //x /= y (equivalent to x = x / y)
-console.log(x);
-x%=4;           //x %= y (equivalent to x = x % y)
-console.log(x);
+console.log(x); //4
+x%=3;           //x %= y (equivalent to x = x % y) this is remainder
+console.log(x); //1   node 7operators.js
+console.log(x**=2) //1 (power of x to 2)
+x=5 //reassigned the value x for further operations
+console.log(x<<=1)
 console.log("-----------------------------------------------------------------------");
 
 //COMPARISON OPERATORS
@@ -66,9 +65,8 @@ if((o || p )==2)              //logical OR if any of true it will true of procee
 if(!israining)                //logical NOT
     console.log("whether is ok now");
 console.log(!!o); //double not is generally used to convert any value into a boolean
-//it actually tells the if the value is truthy or falsy
 // logical NOT operator (!) is used to reverse the Boolean value of an expression. If the expression is true, ! will make it false, and if it’s false, ! will make it true.
-//                                                                                     short circuit concept
+//short circuit concept
 // && → returns the first falsy value, or the last truthy value if none are falsy.
 console.log(0n && 1) //false and true 
 //if first is false and second is true then return false = 0n
@@ -90,6 +88,4 @@ console.log(44 || false) //true and false
 //if first is true and second is false then return true = 44
 console.log("-------------------------------------------------------------------------");
 
-
 //BITWISE OPERATORS---------
-
