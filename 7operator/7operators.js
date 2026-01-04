@@ -52,7 +52,7 @@ console.log("comparison operator------------------------------------------------
 
 
 
-//COMPARISON OPERATORS
+//                                                                       COMPARISON OPERATORS
 //these operators are used to compare values
 let u="2";
 let v=2;
@@ -89,7 +89,7 @@ console.log("logical operator___________________________________________________
 
 
 
-//LOGICAL OPERATORS
+//                                                                        LOGICAL OPERATORS
 //these operators are used to combine conditional statements
 let o=2;
 let p=4;
@@ -113,7 +113,7 @@ console.log(Boolean(israining))
 console.log("short circuit -------------------------------------------------------------------------------------------------------------------------------------------------------")
 
 
-//short circuit concept
+//                                                                short circuit concept
 // && → returns the first falsy value, or the last truthy value if none are falsy.
 console.log(0n && 1) //false and true 
 //if first is false and second is true then return false = 0n
@@ -142,7 +142,7 @@ console.log("bitwise operators--------------------------------------------------
 
 
 
-//BITWISE OPERATORS---------
+//                                                       BITWISE OPERATORS---------
 //bitwise operator used to manipulate the single bit of data in binary level to perform operations
 //the bitwise operators first convert the values into binary and then perform operations
 /* JavaScript is loosely typed, so it will coerce values before applying bitwise operations:
@@ -270,6 +270,7 @@ const a8 = "48"
 const a9 = -a7
 const b1 = -a8
 console.log( a7,a8+"    "+a9,b1)  //nikesh 48      NaN -48
+
 
 
 
