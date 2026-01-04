@@ -13,6 +13,16 @@ console.log(a%b);//modulus it returns the remainder
 console.log(a**b);//this is not an arithmetic operator but it is used to find power of number
 console.log(" assignment operator-----------------------------------------------------------------------");
 
+
+
+
+
+
+
+
+
+
+
 //ASSIGNMENT OPERATORS                                       MOEE IN ASSIGNMENT OPERATORS IN W3S
 //these operators are used to assign values to variable
 let x=4;        //= used to assign value
@@ -32,6 +42,14 @@ x=5 //reassigned the value x for further operations
 console.log(x<<=1)
 console.log("comparison operator-----------------------------------------------------------------------");
 
+
+
+
+
+
+
+
+
 //COMPARISON OPERATORS
 //these operators are used to compare values
 let u="2";
@@ -46,6 +64,13 @@ console.log(u>=v);   //greater then or equal to
 console.log(u<=v);   //less than or equal to 
 console.log("string operator------------------------------------------------------------------------");
 
+
+
+
+
+
+
+
 //STRING OPERATORS
 //the + operator is used to concatenate strings
 let str1="nikesh";
@@ -54,6 +79,13 @@ let result = str1 + " " + str2; //concatenation
 console.log(result);
 console.log(str1+=str2) //it actually append the string
 console.log("logical operator_______________________________________________________________________")
+
+
+
+
+
+
+
 
 //LOGICAL OPERATORS
 //these operators are used to combine conditional statements
@@ -77,6 +109,8 @@ console.log(!!o); //this return the actual boolean value . first the inverter ha
 console.log(Boolean(israining))
 //rather than !! Boolean() func is used because it is explicit, self explanatory and more maintainable
 console.log("short circuit -------------------------------------------------------------------------------------------------------------------------------------------------------")
+
+
 //short circuit concept
 // && → returns the first falsy value, or the last truthy value if none are falsy.
 console.log(0n && 1) //false and true 
@@ -98,6 +132,13 @@ console.log(false || 0) //false and false
 console.log(44 || false) //true and false
 //if first is true and second is false then return true = 44
 console.log("bitwise operators-------------------------------------------------------------------------");
+
+
+
+
+
+
+
 
 //BITWISE OPERATORS---------
 //bitwise operator used to manipulate the single bit of data in binary level to perform operations
@@ -164,4 +205,69 @@ console.log(5>>1>>1) //1
 
 console.log(5 >>> 1);  // Output: 2 (Same as regular shift)
 console.log(-5 >>> 1); // Output: 2147483645 (Huge number!)
+console.log("unary operator -------------------------------------------------------------------------------------------------")
+
+
+
+
+
+
+
+
+
+//                                             UNARY OPERATOR
+//this operator is used to perform operation on a single operand 
+//                        increment and decrement
+//these used to increase and decrease the variable by 1 
+//              POST increment and decrement
+a1= 10
+console.log(a1++) //it will first print a1 then increment 10 by 1 which is 11
+console.log(a1--) //it will first print a1 which is now 11 and then it will decrease the value by 1 which is 10
+//              PRE increment and decrement
+console.log(++a1) //it will first increase the a1 by 1 which is 11 then it will print a1
+console.log(--a1) //it will first decrease the a1 by 1 which is 10 then it will print a1 
+//                                               typeof
+//this returns a string indicating the data type of the unevaluated operand, used for validation
+//you can use any typeof ... or typeof()
+const typeofop =()=>{
+    console.log(typeof 4)  //number
+    console.log(typeof "hello world")  //string
+    console.log(typeof(true))  //boolean
+    console.log(typeof(undefined))   //undefined
+    console.log(typeof {name: "nikesh"})   //object
+    console.log(typeof [1,1,2])  //object    arrays are objects
+    console.log(typeof function(){})   //function
+    console.log(typeof (()=>{}))   //function
+    console.log(typeof null)  //object    this is a famous bug 
+}
+typeofop()
+//                                                delete
+//this removes a property from an object and if successful it returns true
+//it only works on object properties you cant delete a standard variable declared with let, const or var
+const a2 = {name: "nikesh"}
+console.log(a2)    //{ name: "nikesh" }
+const a3=delete a2.name
+console.log(a2)    //{}
+console.log(a3)    //true
+//                                                  void
+//this operator evaluates an expression but always returns undefined
+const a4 = 8
+const result1 = void(a4*5)
+console.log(result1)  //undefined
+//                                               unary plus +
+//this is the fastest way to convert a string into a number
+const a5 = "nikesh"
+const a6 = +a5
+console.log(typeof a5)  //string
+console.log(a5, a6)     // nikesh NaN
+console.log(typeof a6)  //number
+//                                                 unary negation -
+//this converts the operand to a number (if it is not one) and then negates it
+const a7 = "nikesh"
+const a8 = "48"
+const a9 = -a7
+const b1 = -a8
+console.log( a7,a8+"    "+a9,b1)  //nikesh 48      NaN -48
+
+
 
