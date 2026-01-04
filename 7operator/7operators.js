@@ -50,6 +50,8 @@ console.log("comparison operator------------------------------------------------
 
 
 
+
+
 //COMPARISON OPERATORS
 //these operators are used to compare values
 let u="2";
@@ -268,6 +270,7 @@ const a8 = "48"
 const a9 = -a7
 const b1 = -a8
 console.log( a7,a8+"    "+a9,b1)  //nikesh 48      NaN -48
+
 
 
 
