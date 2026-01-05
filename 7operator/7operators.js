@@ -117,7 +117,7 @@ if((o || p )==2)              //logical OR if any of true it will true of procee
 if(!israining)                //logical NOT
     console.log("whether is ok now");  
 console.log(!israining)     
-console.log(!!israining)     
+console.log(!!israining)     //it is called the double bang the truth detector
 console.log(!o)    //this is the inverter where this first convert the value into boolean and then return the opposite boolean value
 //single ! is used to check if something does not exist
 console.log(!!o); //this return the actual boolean value . first the inverter happens and then flip it back to its original truthiness
@@ -320,6 +320,81 @@ console.log("comma operator-----------------------------------------------------
 //returns the value of the last expression and it is often used in for loop
 const d3 = (1+2,3+4)
 console.log("result= ", d3)
+
+
+
+
+
+
+
+
+
+
+
+
+//                                                            nullish operator
+console.log("nullish operator------------------------------------------------------------------------------------------------")
+// ?? this is nullish coalescing which is just a backup plan
+//it provides a default value only if the left hand side is null or undefined
+//unlike || OR logical operator it does not overwrite valid values like 0 or false
+//use ?? when you want a backup plan but dont want to override legitimate values like 0 or false
+const age = 0
+let  agevalid1 = age||18  //0 is falsy so this returns 18
+let agevalid2 = age??18   //even 0 is falsy but it is not null/undefined so it will return 0
+console.log(agevalid1)
+console.log(agevalid2)
+
+
+
+
+
+
+
+
+
+
+
+
+//                                                    optional chaining
+console.log("optional chaining------------------------------------------------------------------------------------------------------------------")
+//gentle knock . it safely access nested properties without throwing errors if something is misssing
+//if the property does not exist it returns undefined instead of crashing
+let user={
+    name:"nikesh",
+    age:"20",
+    city:"noida"
+}
+console.log(user?.city)   //print noida 
+console.log(user?.phone)  //no error just print undefined as phone property do not exist here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//                                                              nullish assignment
+console.log("nullish assignment---------------------------------------------------------------------------------------------------------------------")
+//initialize if empty, it puts the default value if the initial value is missing or empty
+// assigns a value only if the variable is currently null or undefined 
+//useful for setting defaults without overwriting existing values
+const obje={
+    time: 1200,
+    timezone: null
+}
+obje.time ??= 1000;  //still prints 1200 because it is not null or undefined
+obje.timezone ??= "india_standards_IST"   //the property value is null so prints the default provided values
+console.log(obje)
+
+
+
 
 
 
