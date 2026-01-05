@@ -1,7 +1,7 @@
 //                                    OPERATORS
 //js has varieties of operators to perform various operations on variable and values
 
-//ARITHMETIC OPERATORS
+//                                                           ARITHMETIC OPERATORS
 //these operators are used to perform arithmetic operations
 let a=Number(7);
 let b=4;
@@ -23,7 +23,7 @@ console.log(" assignment operator-----------------------------------------------
 
 
 
-//ASSIGNMENT OPERATORS                                       MOEE IN ASSIGNMENT OPERATORS IN W3S
+//                                                               ASSIGNMENT OPERATORS MOEE IN ASSIGNMENT OPERATORS IN W3S
 //these operators are used to assign values to variable
 let x=4;        //= used to assign value
 console.log(x);
@@ -38,8 +38,25 @@ console.log(x); //4
 x%=3;           //x %= y (equivalent to x = x % y) this is remainder
 console.log(x); //1   node 7operators.js
 console.log(x**=2) //1 (power of x to 2)
-x=5 //reassigned the value x for further operations
-console.log(x<<=1)
+x = 5; // reset for bitwise ops
+
+x <<= 1;  // Left shift and assign → x = x << 1 (shift bits left, multiply by 2)
+console.log("After <<= :", x);  // 10
+
+x >>= 1;  // Right shift and assign → x = x >> 1 (shift bits right, divide by 2, keep sign)
+console.log("After >>= :", x);  // 5
+
+x >>>= 1; // Unsigned right shift and assign → x = x >>> 1 (shift bits right, fill with zeros)
+console.log("After >>>= :", x); // 2
+
+x &= 1;   // Bitwise AND and assign → x = x & 1 (keep only common 1 bits)
+console.log("After &= :", x);   // 0
+
+x ^= 1;   // Bitwise XOR and assign → x = x ^ 1 (1 if bits differ)
+console.log("After ^= :", x);   // 1
+
+x |= 1;   // Bitwise OR and assign → x = x | 1 (1 if either bit is 1)
+console.log("After |= :", x);   // 1
 console.log("comparison operator-----------------------------------------------------------------------");
 
 
@@ -50,8 +67,9 @@ console.log("comparison operator------------------------------------------------
 
 
 
-//COMPARISON OPERATORS
+//                                                            COMPARISON OPERATORS
 //these operators are used to compare values
+//     relational operator is the subset of comaparison operator the relational operator compares relative values (greater, smaller, etc) it is called relational because it finds the relation between two vallues.
 let u="2";
 let v=2;
 console.log(u==v);   //equal to (loose and type conversion allowed which means 5=="5" is true)
@@ -71,7 +89,7 @@ console.log("string operator----------------------------------------------------
 
 
 
-//STRING OPERATORS
+//                                                         STRING OPERATORS
 //the + operator is used to concatenate strings
 let str1="nikesh";
 let str2="kumar";
@@ -87,7 +105,7 @@ console.log("logical operator___________________________________________________
 
 
 
-//LOGICAL OPERATORS
+//                                              LOGICAL OPERATORS
 //these operators are used to combine conditional statements
 let o=2;
 let p=4;
@@ -140,7 +158,7 @@ console.log("bitwise operators--------------------------------------------------
 
 
 
-//BITWISE OPERATORS---------
+//                                                          BITWISE OPERATORS---------
 //bitwise operator used to manipulate the single bit of data in binary level to perform operations
 //the bitwise operators first convert the values into binary and then perform operations
 /* JavaScript is loosely typed, so it will coerce values before applying bitwise operations:
@@ -268,6 +286,40 @@ const a8 = "48"
 const a9 = -a7
 const b1 = -a8
 console.log( a7,a8+"    "+a9,b1)  //nikesh 48      NaN -48
+
+
+
+
+
+
+
+
+
+
+
+console.log("ternary operator------------------------------------------------------------------------------------------------------------------")
+//                                                        conditional (ternary) operator
+//it is the only ternary operator in js which is just a shorthand of if..else
+//syntax of it is  condition? expressionIfTrue : expressionIfFalse
+const d1 = 50;
+const d2 = (d1>=50) ? "senior" : "not senior"
+console.log(d2)
+
+
+
+
+
+
+
+
+
+
+console.log("comma operator---------------------------------------------------------------------------------------------------")
+//                                                       comma operator
+//allowe multiple expressions to be evaluated in a single statement 
+//returns the value of the last expression and it is often used in for loop
+const d3 = (1+2,3+4)
+console.log("result= ", d3)
 
 
 
