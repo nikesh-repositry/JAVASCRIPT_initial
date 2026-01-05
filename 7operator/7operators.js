@@ -50,9 +50,7 @@ console.log("comparison operator------------------------------------------------
 
 
 
-
-
-//                                                                       COMPARISON OPERATORS
+//COMPARISON OPERATORS
 //these operators are used to compare values
 let u="2";
 let v=2;
@@ -89,7 +87,7 @@ console.log("logical operator___________________________________________________
 
 
 
-//                                                                        LOGICAL OPERATORS
+//LOGICAL OPERATORS
 //these operators are used to combine conditional statements
 let o=2;
 let p=4;
@@ -113,7 +111,7 @@ console.log(Boolean(israining))
 console.log("short circuit -------------------------------------------------------------------------------------------------------------------------------------------------------")
 
 
-//                                                                short circuit concept
+//short circuit concept
 // && → returns the first falsy value, or the last truthy value if none are falsy.
 console.log(0n && 1) //false and true 
 //if first is false and second is true then return false = 0n
@@ -142,7 +140,7 @@ console.log("bitwise operators--------------------------------------------------
 
 
 
-//                                                       BITWISE OPERATORS---------
+//BITWISE OPERATORS---------
 //bitwise operator used to manipulate the single bit of data in binary level to perform operations
 //the bitwise operators first convert the values into binary and then perform operations
 /* JavaScript is loosely typed, so it will coerce values before applying bitwise operations:
@@ -274,4 +272,54 @@ console.log( a7,a8+"    "+a9,b1)  //nikesh 48      NaN -48
 
 
 
+
+
+
+
+
+
+
+console.log("question-----------------------------------------------------------------------------------------------------------------------")
+let c1 = 6;       // Binary: 00000110
+let c2 = 3;       // Binary: 00000011
+let c3 = "6";     // String type, loosely equal to 6
+
+// Bitwise left shift: c2 << 1 = 3 << 1 = 6
+// Then: c1 <<= 6 → c1 = c1 << 6 → 6 << 6 = 384
+c1 <<= c2 << 1;    
+
+// Bitwise AND: 384 & 3 → Binary: 110000000 & 00000011 = 00000000 → c4 = 0
+let c4 = c1 & c2;
+
+// Bitwise OR: 384 | 3 → Binary: 110000000 | 00000011 = 110000011 → c5 = 387
+let c5 = c1 | c2;
+
+// Bitwise XOR: 384 ^ 3 → Binary: 110000000 ^ 00000011 = 110000011 → c6 = 387
+let c6 = c1 ^ c2;
+
+// Bitwise NOT: ~384 → -(384 + 1) = -385
+let c7 = ~c1;
+
+// Logical expression:
+// (c1 == c3) → true ("6" == 6)
+// (c4 < c5) → true (0 < 387)
+// (c6 === c5) → true → !(true) → false
+// Final: true && true || false → true
+let c8 = (c1 == c3) && (c4 < c5) || !(c6 === c5);
+
+// Ternary operator:
+// If c8 is true → typeof c7 → typeof -385 → "number"
+// If false → --c2 → decrement c2
+let c9 = c8 ? typeof c7 : --c2;
+
+// Output all values
+console.log("c1:", c1);           // 384
+console.log("c2:", c2);           // 3 (unchanged)
+console.log("c3:", c3);           // "6"
+console.log("c4 (c1 & c2):", c4); // 0
+console.log("c5 (c1 | c2):", c5); // 387
+console.log("c6 (c1 ^ c2):", c6); // 387
+console.log("c7 (~c1):", c7);     // -385
+console.log("c8:", c8);           // true
+console.log("c9:", c9);           // "number"
 
