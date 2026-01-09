@@ -18,6 +18,44 @@ let var1 = function function3(){ //function can declare using variable
 
 
 
+
+
+console.log("ways to create a function----------------------------------------------")
+//four ways to create a function
+//1. no parameters no return
+//used for logging, timers, event handlers that do not need data, initializes modules
+//pitfall = overusing side effects makes code harder to test-prefer returning values when possible
+function a1(){
+  console.log("way 1")
+}
+a1()
+
+//2. no parameters with return
+//used for configuration getters, cached values, factories that rely on closure state
+//pitfall = hidden dependencies via closures can surprise readers-document what's captured
+function a2(){
+  return "way 2"
+}
+console.log(a2())
+
+//3. with parameters no return
+//used for updating UI, writing to files/db, emitting events, metrics
+//pitfall = mutating 
+function a3(para){
+  console.log(para)
+}
+a3("way 3")
+
+//4. with parameters with return
+function a4(para){
+  return para
+}
+console.log(a4())
+
+
+
+
+console.log("calling a function-----------------------------------------------------------------------------------")
 /* function invocation 'calling of function'--------------------------------------------------------------------------------------------------------
 When an event occurs (when a user clicks a button)
 When it is invoked (called) from JavaScript code
