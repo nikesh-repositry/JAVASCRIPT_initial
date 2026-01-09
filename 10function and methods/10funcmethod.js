@@ -40,13 +40,15 @@ console.log(a2())
 
 //3. with parameters no return
 //used for updating UI, writing to files/db, emitting events, metrics
-//pitfall = mutating 
+//pitfall = mutating inputs can cause unintended side effects- prefer returning new objects for predictability
 function a3(para){
   console.log(para)
 }
 a3("way 3")
 
 //4. with parameters with return
+//used for business rules, data transformation, validators, formatters
+//pitfall = returing inconsistent types(sometimes number, sometimes object) makes consumers fragils- keep return types predictable
 function a4(para){
   return para
 }
