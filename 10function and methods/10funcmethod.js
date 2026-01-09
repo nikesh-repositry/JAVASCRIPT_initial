@@ -288,6 +288,108 @@ console.log(person.fullName()); // Output: Alice Johnson
 
 //In the global context (outside of any object), this usually refers to the global object (window in browsers).
 console.log(this); // Output: Window object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log("arrow function------------------------------------------------------------------------------------")
+//           arrow function
+/* arrow function introduced in ES6 which provide a shorter syntax to write a function
+in case if the function has only one line then you can omit the return and curly braces for example */
+const mul = (a,b) => a*b;
+mul(2,3) //6
+/* lexical this binding: arrow function do not have their own this, they inherit it from
+   the surrounding code. this is a lifesaver in react or when handling dom events and callbacks
+arrow function is not suitable for methods or constructors they cannot be used with new also they do not have the arguments object    */
+console.log(((x,y)=>x-y)(4,2)); //as an argument to another function
+//the arrow function is used directly inside console.log
+const a6 = (v,m)=>{
+  const re = v**m;
+  return re
+}
+console.log(a6(3,2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log("anonymous function--------------------------------------------------------------------------")
+//anonymous function are the function without any name. 
+//in prod level it is rarely used alone they are usually assigned to a variable or passed as an argument or inline callbacks
+//unlike regular function you cannot call them before they are defined means no hoisting
+//ideal and common for callback function(func passed into another func like setTimeout or .map())
+//can be function expression or arrow func
+const a7 = function(para){
+  return `hello ${para}`
+}
+console.log(a7("world"))
+//function expression (anonymous func assigned to a variable)
+setTimeout(function(){
+  console.log("this ran after 5 seconds this is anonymous func code output")
+},5000)
+//used as a callback
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log("IIFE immediately invoked function expression------------------------------------------------------------");
+//an iife is a function that runs immediately after it is defined
+//it is wrapped in parentheses to tell the js engine to treat it as an expression, followed by () to execute it
+//encapsulation data privacy: variables defined inside an IIFE cant be accessed from the outside. it creates a private scope and avoid polluting global namespaces or scope
+//useful for initialization: run setup code once
+//in prod level often used in library development or to create a "module" where you only expose what is necessary
+// basic IIFE
+(function() {
+  const private = "i am hidden";
+  console.log("IIFE runs immediately");
+  console.log(private);
+})();
+// console.log(private) this is will through error as the variable private is hidden
+
+//arrow IIFE
+(()=>{
+  console.log("arrow IIFE")
+})();
+
+
+
+
+
+
+
 //Function Invocation, Method Invocation, Event Handlers, Constructor Functions(where is use)
 //Accessing Object Properties, Creating Chainable Methods, Event Handling, Constructor Functions(why to use)
 
