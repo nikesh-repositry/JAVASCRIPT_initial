@@ -20,8 +20,22 @@ let var1 = function function3(){ //function can declare using variable
 
 
 
-console.log("ways to create a function----------------------------------------------")
-//four ways to create a function
+
+
+
+console.log("ways to create a function  & parametes arguments----------------------------------------------")
+/* parameters are placeholders used when creating a function
+   arguments are the actual values passed when calling a function
+   parameters in a function is like local variable having block scope */
+//default parameters
+/* default parameters allow you to assign default values to function parameters
+   if no value or undefined is passed fo that parameter when the function is called the default value is used instead  */   
+function a5(name = "world"){
+  console.log(`hello ${name}`)
+} 
+a5("you") //op hello you because "you" is a value it is not undedfined 
+a5()  // op hello world because there is no value is provided so default parameter is used here
+   //                                                      4 ways to create a function
 //1. no parameters no return
 //used for logging, timers, event handlers that do not need data, initializes modules
 //pitfall = overusing side effects makes code harder to test-prefer returning values when possible
@@ -53,6 +67,15 @@ function a4(para){
   return para
 }
 console.log(a4())
+
+
+
+
+
+
+
+
+
 
 
 
