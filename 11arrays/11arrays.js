@@ -4,6 +4,8 @@
 //array is mutable 
 //array index starts from 0
 
+
+
 console.log("creating arrays-------------------------------------------")
 const a1 = [];                  //empty array
 const a2 = [1,2,3];             //literal 
@@ -12,12 +14,14 @@ const a4 = Array.of(1,2,3);     //safe creation
 //tip is try to use array literal than new Array()
 
 
+
 console.log("accessing and updating------------------------------------")
 const a5 = [1,2,3]
 console.log(a5)
 console.log(a5[1])     //accessing via index
 a5[1]=4;               //update
 console.log(a5[1])
+
 
 
 console.log("adding and removing elements------------------------------")
@@ -34,6 +38,7 @@ console.log(a6)     //[ 'delhi', 'noida' ]
 a6.shift()          //it removes the first element from the array
 console.log(a6)     //[ 'noida' ]
 //push/pop O(1) are faster than shift/unshift O(n) because push pop only touch the end of the array while shift and unshift manipulate the front forcing the engine to reindex every element 
+
 
 
 console.log("iteration in array---------------------------------------")
@@ -75,6 +80,7 @@ a7.forEach((currentvalue, index, array)=>{
 });
 
 
+
 console.log("transformation methods-----------------------------------")
 //this is the holy trinity of es6
 //map filter reduce
@@ -113,4 +119,68 @@ const result = arr.reduce((accumulator, currentValue, index, array) => {
 const b4=b1.reduce((acc,cuv)=>acc+cuv); //here i did not give initial value so by default it takes the first element of the array to starts with
 console.log(b4)
 
+
+
+console.log("searching------------------------------------------------")
+//includes  indexOf  find  findIndex
+//                                   include
+//includes(searchelement, fromIndex?)
+//checks if an array contains a value-returns true or false
+//NO index returned i.e. good for simple membership tests.
+//indexOf cant find NaN but includes can
+const b5 = ["a","b"] 
+console.log(b5.includes("a")) //true
+console.log([NaN].includes(NaN)) //true //includes uses samevaluezero semantics(like === but treats NaN as equal to NaN)
+
+//                                 indexOf
+//indexOf(searchelement, fromIndex?)
+//finds the index of the first occurrence of a value; returns -1 if not found
+//compares with strictly ====
+//works by referece for objects- two identical looking objects wont match unless they are the same reference. returns the first match only
+console.log(b5.indexOf("b")) //1
+console.log(b5.indexOf("x")) //-1
+console.log([NaN].indexOf(NaN)) //-1 cannot match NaN with ===
+
+//                                   find
+//find(predicate, thisArg?)
+//returns the first element that satisfies a predicate; undefined if none
+//signature: arr.find((value, index, array) => boolean, thisArg).
+//it returns the element itself not the index. stops at the first match. ideal for searching arrays of objects
+const user=[
+    {name:"nikesh"},
+    {name:"kumar"}
+];
+const c1=user.find(i=>i.name==="nikesh");
+const c2=user.find(i=>i.name.startsWith("k"))
+console.log(c1) //{ name: 'nikesh' }
+console.log(c2) //{ name: 'kumar' }
+//find first even number
+const numbers = [1, 3, 7, 8, 10];
+const firstEven = numbers.find((value, index, array) => value % 2 === 0);
+console.log(firstEven); // 8
+//using thisArg
+const fruits = ["apple", "banana", "cherry"];
+function checkLength(value) {
+  return value.length === this.targetLength;
+}
+const result = fruits.find(checkLength, { targetLength: 6 });
+console.log(result); // "banana"
+
+//                                     findIndex
+//findIndex(predicate, thisArg?)
+//Signature: arr.findIndex((value, index, array) => boolean, thisArg).
+//returns the index of the first element that satisfies a predicate; -1 if none
+//more flexible than indexof because it uses a predicate func. great for objects or computed conditions
+const c4 = [1,2,23,3,5]
+console.log(c4.findIndex(x=>x%2==0)) 
+/*Objects by reference: indexOf/includes only match the same object reference; use find/findIndex for property-based matching. 
+
+NaN behavior: includes finds NaN; indexOf does not. find/findIndex can match NaN via a predicate like Number.isNaN(x). 
+
+Starting index (fromIndex): includes and indexOf support fromIndex to start searching later in the array. Negative fromIndex counts from the end.
+
+Performance: includes/indexOf are simple linear scans; find/findIndex add callback overhead but enable richer logic. All are O(n) in the worst case.
+
+First match only: All four methods stop at the first match. For multiple matches, use filter
+*/
 
