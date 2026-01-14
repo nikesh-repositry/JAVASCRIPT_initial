@@ -117,7 +117,7 @@ const result = arr.reduce((accumulator, currentValue, index, array) => {
 //array(optional) = the array being reduced
 //initialvalue(optional) = starting value for the accumulator. if omitted the first array element is used.
 const b4=b1.reduce((acc,cuv)=>acc+cuv); //here i did not give initial value so by default it takes the first element of the array to starts with
-console.log(b4)
+console.log(b4) //60
 
 
 
@@ -184,3 +184,37 @@ Performance: includes/indexOf are simple linear scans; find/findIndex add callba
 First match only: All four methods stop at the first match. For multiple matches, use filter
 */
 
+
+
+console.log("slicing---------------------------------------------------")
+/*it is a non destructive extraction
+returns a shallow copy of a portion of an array into a new array
+does not modify the original array 
+syntax=      array.slice(start,end);
+start: index where extraction begins(inclusive)
+end:   index where extraction stops(exclusive). if omitted, goes to the end
+negative indexes count from the end -1=last element */
+//use slice when you want a copy of part of an array without changing the original
+const d1 = ["a","b","c","d","e"]
+console.log(d1.slice(1,5))   //[ 'b', 'c', 'd', 'e' ]
+console.log(d1.slice(2))     //[ 'c', 'd', 'e' ]
+console.log(d1.slice(-4,-2)) //[ 'b', 'c' ]
+console.log(d1.slice(-5))    //[ 'a', 'b', 'c', 'd', 'e' ]
+
+
+
+console.log("spicing---------------------------------------------------")
+/*it do destructive modification
+changes the content of an array by removing, replacing or adding element
+it modifies the original array  
+syntax:  array.splice(start, deleteCount, item1, item2, ...);
+start:  index where changes begin
+deletecount:  number of elements to remove
+item..:  elements to insert at start */
+//      removing
+const d2 = ["a","b","c","d"]
+console.log(d2.splice(1,2))
+//      adding
+console.log(d2.splice(1,0,"10","20"))
+//      replacing
+console.log(d2.splice(1,1,"x","y"))
