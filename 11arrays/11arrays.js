@@ -213,8 +213,54 @@ deletecount:  number of elements to remove
 item..:  elements to insert at start */
 //      removing
 const d2 = ["a","b","c","d"]
-console.log(d2.splice(1,2))
+console.log(d2.splice(1,2))//[ 'b', 'c' ] //it just remove the elements at the index 1 and 2
+console.log(d2)//[ 'a', 'd' ]
 //      adding
-console.log(d2.splice(1,0,"10","20"))
+console.log(d2.splice(1,0,"10","20")) //[] //add elements at index 1 and deletecount is 0 means no removal
+console.log(d2) //[ 'a', '10', '20', 'd' ] 
 //      replacing
-console.log(d2.splice(1,1,"x","y"))
+console.log(d2.splice(1,2,"x","y")) //[ '10', '20' ] //replace 2 elements at index 1 with "x" and "y"
+console.log(d2) //[ 'a', 'x', 'y', 'd' ]
+
+
+
+console.log("sort()---------------------------------------------------")
+/*in js .sort() method sorts the elements of an array in place and 
+returns the same array. it converts elements to string and compare their 
+UTF-16 code unit values, which can lead to unexpected results with numbers
+you can provide your custom comparison func to control the sort order
+working:
+mutates the original array, not create a copy
+returns the same array reference after sorting
+default=converts elements to string and sort lexicographycally   */
+const e1 = ["banana","orange","apple","mango"]
+e1.sort();
+console.log(e1) //[ 'apple', 'banana', 'mango', 'orange' ]
+//number sorting
+const e2 = [29,80,8,100,22,383939];
+console.log(e2.sort()) //[ 100, 22, 29, 383939, 8, 80 ] yeah its wrong for numeric
+//so to sort numerically use compare function
+e2.sort((a,b)=>a-b) //for ascending
+//okay but how does it works
+/*Example: comparing 5 and 10
+a - b = 5 - 10 = -5 → negative → 5 comes before 10.
+This ensures smaller numbers bubble to the front. */
+console.log(e2)//[ 8, 22, 29, 80, 100, 383939 ]
+console.log(e2.sort((a,b)=>b-a)) //for descending //[ 8, 22, 29, 80, 100, 383939 ]
+//sorting objects
+const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 20 },
+  { name: "Charlie", age: 30 }
+];
+people.sort((a, b) => a.age - b.age);
+console.log(people);
+// [{name:"Bob", age:20}, {name:"Alice", age:25}, {name:"Charlie", age:30}]
+//case-insensitive sort
+const words = ["Banana", "apple", "Mango"];
+words.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+console.log(words); // ["apple", "Banana", "Mango"]
+
+
+
+
