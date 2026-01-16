@@ -263,4 +263,33 @@ console.log(words); // ["apple", "Banana", "Mango"]
 
 
 
+console.log("flattening------------------------------------------------")
+//so flattening means converting a nested array into a single level array
+const arr = [1, [2, 3], [4, [5, 6]]];
+// Flatten one level
+console.log(arr.flat()); // [1, 2, 3, 4, [5, 6]]
+// Flatten deeply
+console.log(arr.flat(Infinity)); // [1, 2, 3, 4, 5, 6]
+// flat(depth) → depth specifies how many levels to flatten.
+// Infinity → flattens all levels.
+
+
+
+console.log("concate--------------------------------------------------")
+//combines two or more arrays into one
+const a = [1, 2];
+const b = [3, 4];
+const combined = a.concat(b);
+console.log(combined); // [1, 2, 3, 4]
+/////////combining + flattening
+const arr1 = [1, [2, 3]];
+const arr2 = [[4, 5], 6];
+const combineded = [...arr1, ...arr2].flat();
+console.log(combineded); // [1, 2, 3, 4, 5, 6]
+//using spread oprator
+const a0 = [1, 2];
+const b0 = [3, 4];
+const combine = [...a0, ...b0];
+console.log(combine); // [1, 2, 3, 4]
+
 
