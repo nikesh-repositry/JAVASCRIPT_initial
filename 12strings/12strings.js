@@ -63,3 +63,47 @@ console.log(a8.slice(-4,-1))//lax       from -4 to -2 excluded -1
 console.log(a8.substring(4))//o galaxy  from 4 to last character
 
 
+
+console.log("searhing------------------------------------------------")
+let str1 = "Hello World";
+console.log(str1.indexOf("World"));   // 6
+console.log(str1.includes("Hello")); // true
+console.log(str1.startsWith("He"));  // true
+console.log(str1.endsWith("ld"));    // true
+
+
+
+console.log("modifying-----------------------------------------------")
+let str2= "  javaScript   "
+console.log(str2.trim());
+console.log(str2.toLocaleLowerCase())
+console.log(str2.toUpperCase());
+console.log(str2.toLowerCase())
+console.log(str2.replace("Script"," is a language too"))
+console.log(str2.replaceAll("a","i")) //or 
+console.log(str2.replace(/a/g, "i"))
+
+
+
+console.log("splitting and joining-----------------------------------")
+let str3 = "right,left,up,down";
+let d1 = str3.split(",") //Split a string into substrings using the specified separator and return them as an array.
+console.log(d1) //[ 'right', 'left', 'up', 'down' ]
+let d2 = d1.join(" /|/ "); //Adds all the elements of an array into a string, separated by the specified separator string.
+console.log(d2) //right | left | up | down
+
+
+
+console.log("more methods--------------------------------------------")
+let str4 = "foo fii faa fiiaa";
+console.log(str4.match(/fi/)) //It returns a match object with extra info because there’s no global flag.
+console.log(str4.match(/fi./g)) //[ 'fii', 'fii' ]   why is not fiiaa 
+console.log(str4.match(/fi.+/g)); //[ 'fii faa fiiaa' ] why is faa included
+//fi = literal characters
+//. = matches exactly one character (any character except newline)
+//g = global flag so it finds all matches not stop on the first match
+//                study about regex regarding this .match() method
+
+console.log(str4.repeat(2))
+console.log(str4.padStart(30,"*")) //*************foo fii faa fiiaa
+console.log(str4.padEnd(20,"*")) //foo fii faa fiiaa***
