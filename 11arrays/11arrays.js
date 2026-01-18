@@ -293,3 +293,8 @@ const combine = [...a0, ...b0];
 console.log(combine); // [1, 2, 3, 4]
 
 
+
+
+console.log("shallow and deep copy")
+console.log("spread and rest operator")
+console.log("array like object and array.from()")
