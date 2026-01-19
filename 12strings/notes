@@ -1,1 +1,12 @@
+| Feature         | String                                      | Array                                                       |
+|----------------|---------------------------------------------|-------------------------------------------------------------|
+| Purpose         | Stores text (a sequence of characters)      | Stores multiple values (any data type)                      |
+| Storage         | Text only (characters)                      | Can be numbers, strings, booleans, etc.                     |
+| Example         | "hello"                                     | ["h", "e", "l", "l", "o"]                                   |
+| Indexing        | Yes (e.g. "hello"[0] is 'h')                | Yes (e.g. ["red", "blue"][0] is "red")                      |
+| Mutable?        | No (characters can't be changed directly)   | Yes (you can change items easily)                           |
+| Length Property | Yes: "hello".length → 5                     | Yes: ["a", "b"].length → 2                                  |
+| Common Use      | Names, messages, text                       | Lists of things (colors, numbers, etc.)                     |
+| Datatype        | String                                      | Object                                                      |
+| Iterable        | Yes                                         | Yes                                                         |
 
