@@ -94,7 +94,7 @@ const newArray = arr.map((currentValue, index, array) => {
 */
 const b1=[10,20,30];
 const b2=b1.map(n=>n/10) //n is here the currentvalue not the index or array
-console.log(b2)
+console.log(b2) //[ 1, 2, 3 ]
 //                                     .filter()
 //creates a new array with elements that pass a condition
 /*syntax
@@ -103,7 +103,7 @@ const filteredArray = arr.filter((currentValue, index, array) => {
 });
  */
 const b3=b1.filter(n=>n/10)
-console.log(b3)
+console.log(b3)  //[ 10, 20, 30 ]
 //                                    .reduce()
 //reduces an array to a single value(number, string, object, etc)
 /*syntax
