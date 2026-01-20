@@ -294,7 +294,23 @@ console.log(combine); // [1, 2, 3, 4]
 
 
 
+console.log("join----------------------------------------------------")
+//join() method converts all elements of an array into a single string, separated by a specifiec delimiter and default is comma
+const fruit = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruit.join());      
+// Output: "Banana,Orange,Apple,Mango"
+console.log(fruit.join(" - ")); 
+// Output: "Banana - Orange - Apple - Mango"
+console.log(fruit.join(""));    
+// Output: "BananaOrangeAppleMango"
+
+
+
+
 
 console.log("shallow and deep copy")
 console.log("spread and rest operator")
 console.log("array like object and array.from()")
+
+
+
