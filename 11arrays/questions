@@ -1,0 +1,9 @@
+1.how to check if given thing is array or not? how to convert other datatypes to array? what if we try to convert an object into an array?
+==to check use Array.isArray() it gives answer in true and false and this is the safest common way to check
+  other ways are obj instanceof Array and prototype.toString.call() === object array
+ =to convert into array use Array.from()
+ =but when try object convert into an array through error because plain objects are not iterable and instead
+  of this you can convert them into arrays of keys, values or entries using Object.keys(obj_name)
+
+
+
