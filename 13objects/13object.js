@@ -79,6 +79,26 @@ it affects performance if used excessively because it changes the shape of objec
 
 
 console.log("this keyword in object------------------------------------")
+//this refer to the object that owns the method at runtime
+const obj = {
+    name:"nikesh",
+    greet:function(){
+        return "hello, my name is "+this.name;
+    }
+};
+console.log(obj.greet())
+/*inside a method "this" points to the object calling the method
+if func is deleted "this" may become undefined(in strict mode) or window(in non-strict mode)
+arrow func do not bind their own this; they inherit from the enclosing scope */
+const obj2 = {
+  name: "Nikesh",
+  arrowGreet: () => {
+    console.log("Hello, " + this.name);
+  }
+};
+
+obj2.arrowGreet(); 
+// "Hello, undefined" (because arrow functions don’t bind `this`)
 
 
 
