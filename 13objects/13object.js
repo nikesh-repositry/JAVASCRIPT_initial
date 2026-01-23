@@ -30,7 +30,58 @@ console.log(person)
 
 console.log("accessing object properties-------------------------------")
 //dot notation
-//use it when property name is a valid identifier
+//use it when property name is a valid identifier 
+console.log(car.brand);
+console.log(person.name);
+
+//bracket notation
+//use it when property name is dynamic, stored in variable or invalid identifier
+console.log(car["speed"]);
+
+
+
+
+
+
+
+console.log("udating and adding new properties-------------------------")
+const fruit = {
+    banana:"banana has no seed",
+    lichi:"lichi has one seed"
+}
+console.log(fruit)
+fruit.banana="banana hai no seed and its sweet"
+console.log(fruit)
+//if the property exists it gets updated and if it does not exist it gets created
+
+
+
+
+
+
+console.log("deleting properties------------------------------------")
+const user ={
+    name:"nikesh",
+    role:"sde 3",
+}
+console.log(user)
+delete user.role;
+console.log(user);
+/*delete only removes the property, not the object itself
+it affects performance if used excessively because it changes the shape of object in memory */
+
+
+
+
+
+
+
+
+
+console.log("this keyword in object------------------------------------")
+
+
+
 
 
 
