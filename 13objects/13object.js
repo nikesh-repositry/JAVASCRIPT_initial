@@ -118,31 +118,84 @@ const objet = {
     name:"nikesh",
     location:"noida"
 }
-//                                     1. Object.keys(obj)
+//                                     1. Object.keys(obj)  not change object
 //returns an array of enumerable  property names(keys)
 console.log(Object.keys(objet))   //[ 'name', 'location' ]
 
-//                                     2. Object.values(obj)
+//                                     2. Object.values(obj)  not change object
 //returns an array of enumerable property values
 console.log(Object.values(objet))   //[ 'nikesh', 'noida' ]
 
-//                                     3.Object.entries(obj)
+//                                     3.Object.entries(obj)  not change object
 //returns an array of [key,value] pairs
 console.log(Object.entries(objet))  //[ [ 'name', 'nikesh' ], [ 'location', 'noida' ] ]
 
-//                                     4. Object.assign(target, source)
+//                                     4. Object.assign(target, source)  change object
 //copies properties from source to target. returns the modified target
 const a1={user1:"bala"}
 const a2={user2:"jhilmil"}
 console.log(Object.assign(a1,a2))   //{ user1: 'bala', user2: 'jhilmil' }
 
-//                                     5. Object.freeze(obj)
+//                                     5. Object.freeze(obj)    change object
 //lock the object-no add remove update allowed then
 Object.freeze(a1)
-a1.location="noida"
-delete a1.user1;
+a1.location="noida"   //ignored
+delete a1.user1;      //ignored
 console.log(a1)   //{ user1: 'bala', user2: 'jhilmil' }   no change at all
  
+//                                     6. Object.seal(obj)     change object
+//lock structure means can not add and remove but can update existing properties
+const book = {title:"network"}
+Object.seal(book)
+book.title="computer network"  //allowed
+book.author="abc"              //ignored   
+delete book.title;             //ignored
+console.log(book)  //{ title: 'computer network' }
+
+//                                     7. obj.hasOwnProperty(key)    do not change object
+//checks if the object has the property directly(not inherited)
+const a3={a:"abc", b:"xyz"}
+console.log(a3.hasOwnProperty("a"))   //true
+console.log(a3.hasOwnProperty("c"))   //false
+
+
+
+
+
+
+
+
+console.log("singleton object-------------------------------------------")
+/*a singleton object is a single unique instance created once and resued
+throughout your code. it is not meant to be dublicated or used as a 
+blueprint for other objects
+= created using object literal syntax ( {} )
+= exists as one specific instance
+= used for global configuration, logging  or shared state
+use it when = app wide configuration
+            = logging service
+            = shared cache/store
+            = authentication/session manager
+demerits = overuse can lead to tight coupling
+         = harder to test or reset state
+         = avoid using singletons for data models or user instances            */
+const config = {
+  appName: "MyApp",
+  version: "1.0",
+  debug: true
+};
+//this config object is singleton, it is created once and resued wherever needed
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const u1 = new User("Nikesh");
+const u2 = new User("Alex");
+console.log(u1 === u2); // false (two separate instances)
+
+
+
 
 
 
