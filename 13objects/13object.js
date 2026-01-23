@@ -21,7 +21,8 @@ car.drive() //the car is driving
 let person = new Object()
 person.name = "nikesh"
 person.age= "21"
-console.log(person)
+console.log(person)    //{ name: 'nikesh', age: '21' }
+
 
 
 
@@ -31,12 +32,12 @@ console.log(person)
 console.log("accessing object properties-------------------------------")
 //dot notation
 //use it when property name is a valid identifier 
-console.log(car.brand);
-console.log(person.name);
+console.log(car.brand);     //tata
+console.log(person.name);    //nikesh
 
 //bracket notation
 //use it when property name is dynamic, stored in variable or invalid identifier
-console.log(car["speed"]);
+console.log(car["speed"]);   //180
 
 
 
@@ -49,9 +50,13 @@ const fruit = {
     banana:"banana has no seed",
     lichi:"lichi has one seed"
 }
-console.log(fruit)
+console.log(fruit)    //{ banana: 'banana has no seed', lichi: 'lichi has one seed' }
 fruit.banana="banana hai no seed and its sweet"
 console.log(fruit)
+// {
+//   banana: 'banana hai no seed and its sweet',
+//   lichi: 'lichi has one seed'
+// }
 //if the property exists it gets updated and if it does not exist it gets created
 
 
@@ -64,9 +69,9 @@ const user ={
     name:"nikesh",
     role:"sde 3",
 }
-console.log(user)
+console.log(user)      //{ name: 'nikesh', role: 'sde 3' }
 delete user.role;
-console.log(user);
+console.log(user);     //{ name: 'nikesh' }
 /*delete only removes the property, not the object itself
 it affects performance if used excessively because it changes the shape of object in memory */
 
@@ -86,7 +91,7 @@ const obj = {
         return "hello, my name is "+this.name;
     }
 };
-console.log(obj.greet())
+console.log(obj.greet())    //hello, my name is nikesh
 /*inside a method "this" points to the object calling the method
 if func is deleted "this" may become undefined(in strict mode) or window(in non-strict mode)
 arrow func do not bind their own this; they inherit from the enclosing scope */
@@ -99,6 +104,47 @@ const obj2 = {
 
 obj2.arrowGreet(); 
 // "Hello, undefined" (because arrow functions don’t bind `this`)
+
+
+
+
+
+
+
+
+
+console.log("object methods-----------------------------------------")
+const objet = {
+    name:"nikesh",
+    location:"noida"
+}
+//                                     1. Object.keys(obj)
+//returns an array of enumerable  property names(keys)
+console.log(Object.keys(objet))   //[ 'name', 'location' ]
+
+//                                     2. Object.values(obj)
+//returns an array of enumerable property values
+console.log(Object.values(objet))   //[ 'nikesh', 'noida' ]
+
+//                                     3.Object.entries(obj)
+//returns an array of [key,value] pairs
+console.log(Object.entries(objet))  //[ [ 'name', 'nikesh' ], [ 'location', 'noida' ] ]
+
+//                                     4. Object.assign(target, source)
+//copies properties from source to target. returns the modified target
+const a1={user1:"bala"}
+const a2={user2:"jhilmil"}
+console.log(Object.assign(a1,a2))   //{ user1: 'bala', user2: 'jhilmil' }
+
+//                                     5. Object.freeze(obj)
+//lock the object-no add remove update allowed then
+Object.freeze(a1)
+a1.location="noida"
+delete a1.user1;
+console.log(a1)   //{ user1: 'bala', user2: 'jhilmil' }   no change at all
+ 
+
+
 
 
 
