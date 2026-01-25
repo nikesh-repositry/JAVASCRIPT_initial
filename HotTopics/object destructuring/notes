@@ -1,1 +1,30 @@
+/*object destructuring in js is a concise syntax that let you extract properties
+from object and assign them to variables directly. it simplifies code,
+imporve readability and supports renaming, default values and nested structure  */
+const b1 = {name:"nikesh", location:"noida"}
+const{name,location}=b1
+console.log(name)   //nikesh
+console.log(location)  //noida
+/* main concept benefit of destructuring is 
+// Without destructuring
+const name = user.name;
+const age = user.age;
 
+// With destructuring
+const { name, age } = user;
+ */
+/*
+Basic                 { key } = obj              Extract property
+Rename                 { key: newName }          Rename variable
+Default                 { key = default }          Fallback value
+Nested                 { nested: { key } }  Deep extraction
+Function Param         function({ key })          Clean function signature
+Rest                 { key, ...rest }          Capture remaining props */
+
+
+const { nam, age = 30 } = b1;
+console.log(age); // 30
+
+const b2={name1:"jhilmil",year:2003}
+const {year} = b2
+console.log(b2.name1)
