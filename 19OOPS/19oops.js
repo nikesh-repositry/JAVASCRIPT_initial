@@ -36,6 +36,7 @@ user1.greet()
 //it is regular function that returns a new object and it generates objects based on the input you give it
 //it is a template as you can create more than one object easily
 //but whenever you create an object a new copy of greet function is created in memory, which can be slightly inefficient if you have thousands of objects
+//does not involve prototype by default
 function user2(name){
     return {
         name,   //name:name, not necessary as both variable name is same
@@ -52,6 +53,7 @@ user2("javascript").greet()
 //you use the new keyword to call the function
 //it uses the this keyword to bind properties to the new object.
 //and when you use new js automatically creates an object, links it to a prototypes and return it.
+//automatically sets up a link to student prototype
 function user3(name){
     this.name = name;
     this.greet = function(){
@@ -62,6 +64,175 @@ function user3(name){
 // user3("nikesh").greet()      calling by this way just modifying the global object which is not safe 
 const u = new user3("nikesh")
 u.greet()
+
+//                                 4.class syntax
+//it is the modern standard 
+/*It groups the data (constructor) and the behavior (methods) into one clean block. Crucially, methods defined in a class are automatically added to the "prototype," meaning only one copy of the greet function exists in memory, no matter how many users you create.*/
+//example code 1
+class user4{
+    name = "nikesh";
+    location = "noida";
+}
+let u3 = new user4()
+console.log(u3)      //user4 { name: 'nikesh', location: 'noida' }
+let u4 = new user4()
+console.log(u4)      //user4 { name: 'nikesh', location: 'noida' }
+
+//example code 2
+class user5{
+    name = "nikesh";
+    add ="noida";
+    constructor(name="malesh",add){
+        this.name = name;
+        this.add= add;
+    }
+}
+let u5 = new user5("alen","delhi")
+console.log(u5)                  //user5 { name: 'alen', add: 'delhi' }
+let u6 = new user5()
+console.log(u6)                  //user5 { name: 'malesh', add: undefined }
+
+
+
+
+
+
+
+
+
+
+//                                      this keyword
+//its value depends on how the function or method is called
+//in oop this refers to the object that is calling the method
+//it is used to access the current instance properties or methods
+//arrow functions dont have their own this-they inherit this from the surrounding lexical scope
+let user = {
+  name: "Nikesh",
+  greet: function() {
+    console.log("Hello " + this.name); // Works: "Hello Nikesh"
+  },
+  greetArrow: () => {
+    console.log("Hello " + this.name); // ❌ undefined
+  }
+};
+
+user.greet();      // "Hello Nikesh"
+user.greetArrow(); // "Hello undefined"
+
+//                                      new keyword
+//in js the new keyword is used to create an instance of an object from a constructor function or class
+//it is like saying that make me a new object from this blueprint 
+
+
+
+
+
+
+
+
+
+
+
+//                                       prototypes
+/* in js every function automatically gets a prototype property when defined
+like when you use constructor function with new keyword, the created object interanl prototype points to that function
+this means all instances share the same method defined on the prototype instead of dublicating them in memory
+well in simple mean
+prototype in js is like a shared storage locker and instead of every object carrying its own heavy methods they all share one set of tools like method kept in a central location
+prototype optimized the memory 
+                            1. The Problem: Memory Waste
+inside BankAccount, you had the deposit function defined inside the constructor:
+  
+function BankAccount(holdersName, balance = 0) {
+    this.holdersName = holdersName;
+    this.balance = balance;
+    this.deposit = function(amount) { ... } // Created every single time
+}
+
+If you create 1,000 bank accounts, JavaScript creates 1,000 copies of the deposit function. This wastes a lot of memory because the function does the exact same thing for everyone.
+
+
+
+                           2. The Solution: The Prototype
+When you move the method outside using BankAccount.prototype, you are telling JavaScript: "Store this function once in a special place where all BankAccount objects can find it."
+
+BankAccount.prototype.deposit = function (amount) {
+     this.balance += amount;
+}
+and Now, if you have 1,000 accounts, there is only 1 copy of deposit in memory.
+
+                            3. How JavaScript Finds Methods (The Chain)
+When you call muskanAccount.deposit(500), JavaScript follows these steps:
+Check the object: Does muskanAccount have a property called deposit? (No, it only has name and balance).
+Check the Prototype: It follows a hidden link (called __proto__) to BankAccount.prototype. Does it find deposit there? Yes!
+Execute: It runs that function.
+This "searching" process is called the Prototype Chain.
+
+                            4. Class Syntax vs. Prototype
+In your Student class example, JavaScript is actually doing the prototype work for you behind the scenes:
+
+class Student {
+    constructor(name, age) {
+        this.name = name; // Stored on the instance
+        this.age = age;   // Stored on the instance
+    }
+    introduceMyself() {   // Automatically stored on Student.prototype!
+        console.log(`My name is ${this.name}`);
+    }
+}
+
+Even though you wrote it inside the class block, introduceMyself does not live on the s1 object. It lives on Student.prototype. Classes just make the syntax look cleaner.
+*/
+
+
+//example of contructor function with prototype
+function BankAccount(holdersName, balance = 0) {
+    this.holdersName = holdersName;
+    this.balance = balance;
+}
+// Methods added to prototype (shared by all instances)
+BankAccount.prototype.deposit = function(amount) {
+    this.balance += amount;
+};
+BankAccount.prototype.withdraw = function(amount) {
+    this.balance -= amount;
+};
+let muskanAccount = new BankAccount("Muskan", 1000);
+muskanAccount.deposit(500);
+console.log(muskanAccount.balance); // 1500
+// Why use prototype here?
+// If you define deposit and withdraw inside the constructor, every object gets its own copy of those functions.
+// By attaching them to BankAccount.prototype, all accounts share the same function reference, saving memory.
+
+
+
+//example of factory function
+function Student(name) {
+    return { name };
+}
+let ob1 = Student("mkl");
+console.log(ob1); // { name: "mkl" }
+// Factory functions don’t use prototype.
+// Each call returns a fresh object.
+// Methods (if added) are recreated per object, not shared.
+
+
+//es6 class
+class Student {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    introduceMyself() {
+        console.log(`My name is ${this.name}, age is ${this.age}`);
+    }
+}
+let s1 = new Student("Muskan", 19);
+s1.introduceMyself(); // My name is Muskan, age is 19
+// Under the hood, classes still use prototypes.
+// Methods like introduceMyself are stored on Student.prototype.
+// Cleaner syntax compared to manually attaching methods.
+
 
 
 
