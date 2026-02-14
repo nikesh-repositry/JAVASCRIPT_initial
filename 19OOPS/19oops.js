@@ -218,7 +218,7 @@ console.log(ob1); // { name: "mkl" }
 
 
 //es6 class
-class Student {
+class Student1 {
     constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -227,11 +227,65 @@ class Student {
         console.log(`My name is ${this.name}, age is ${this.age}`);
     }
 }
-let s1 = new Student("Muskan", 19);
+let s1 = new Student1("Muskan", 19);  
 s1.introduceMyself(); // My name is Muskan, age is 19
 // Under the hood, classes still use prototypes.
 // Methods like introduceMyself are stored on Student.prototype.
 // Cleaner syntax compared to manually attaching methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//                                     OOPS
+/* object oriented programming in js is programming paradigm based on the concept of objects
+these objects encapsulate both attributes and the functions that operate on that attributes like methods
+js is not purely class based language like java c++ but it supports oops principle through its prototype based model and class syntax.
+class===a blueprint which encapsulates properties and methods
+object==instance of a class, each object has its own unique set of values for its properties
+*/
+class Car {
+    constructor(name, color, mileage) {
+        this.name = name;
+        this.color = color;
+        this.mileage = mileage;
+    }
+    start() {
+        console.log(`${this.name} is starting...`)
+    }
+    stop() {
+        console.log(`${this.name} is stopping...`)
+    }
+}
+let bmw = new Car("BMW", "Dark Blue", 45);
+let toyota = new Car("Toyota", "Silver Blue", 28);
+let buggati = new Car("Buggati", "Brown", 5);
+console.log(bmw, toyota, buggati) //Car { name: 'BMW', color: 'Dark Blue', mileage: 45 } Car { name: 'Toyota', color: 'Silver Blue', mileage: 28 } Car { name: 'Buggati', color: 'Brown', mileage: 5 }
+
+//                                      constructor
+//constructor is a special method within a class that is automatically called when a new object instance of that class is created
+//it is primarily used to initialize object properties with specific values or perform setup tasks for the object   
+/* characteristics
+purpose: to create and initialize objects
+name: must be named constructor
+automatic invocation: called automatically when an object is created using the new keyword
+initialization: sets initial values for object properties
+implicit constructor: if a class does not have a contructor, js provides a default empty constructor
+derived class constructor: if a derived class does not have a contructor it calls the parent constuctor passing along any arguments
+
+
+*/
 
 
 
