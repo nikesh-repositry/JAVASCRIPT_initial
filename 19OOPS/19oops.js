@@ -292,3 +292,107 @@ derived class constructor: if a derived class does not have a contructor it call
 
 
 
+
+
+
+
+
+
+//                                      pillars of oop
+/* there are four pillar of oop
+abstraction = hiding complexity and showing only the essential features
+encapsulation = hiding data inside objects and provide security
+inheritance = using properties and methods from another object/class
+polymorphism = same method behaving differently based on the object
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+//                                          abstraction
+//abstraction helps to hide the internal complexity and show only the necessary functionality
+//it goal is to let the user focus on what the object does not how it does it
+// Abstracted utility functions
+function calculateArea(shape, dimensions) {
+  if (shape === "circle") {
+    return Math.PI * dimensions.radius * dimensions.radius;
+  }
+  if (shape === "square") {
+    return dimensions.side * dimensions.side;
+  }
+  if (shape === "rectangle") {
+    return dimensions.length * dimensions.width;
+  }
+  throw new Error("Unknown shape");
+}
+// Abstracted function to display result
+function drawShape(shape, dimensions) {
+  const area = calculateArea(shape, dimensions);
+  console.log(`Drawing a ${shape} with area ${area}`);
+}
+drawShape("circle", { radius: 5 });
+drawShape("square", { side: 10 });
+drawShape("rectangle", { length: 4, width: 6 });
+//here the user of drawshape does not need to know how the area is calculated they just call drawshape with parameters and the internal logic is abstracted away
+
+//                                      encapsulation
+//it restrict direct access to data and controlling it through methods
+//it protects internal state and enforce rules
+//in js is it done using private fields (#) and getter/setter for controlled access
+class userprofile{
+    #password; //private field
+
+    constructor(username, password){
+        this.username = username
+        this.#setpassword(password)
+    }
+
+    #setpassword(password){     //controlled setter
+        if(password.length<8){
+            throw new Error("PASSWORD MUST BE AT LEAST 8 CHARACTERS LONG")
+        }
+        this.#password=password
+    }
+
+    updatepassword(newpassword){    //public method to update password safety
+        this.#setpassword(newpassword)
+    }
+
+    checkpassword(input){           //public method to check password
+        return this.#password===input;
+    }
+}
+const userr= new userprofile("nikesh","nikesh78")
+// console.log(userr.checkpassword("nikesh77")) //true
+//below code line is wrong as no direct access to private field 
+//console.log(user.#password)  //SyntaxError: Private field '#password' must be declared in an enclosing class
+userr.updatepassword("12345678")
+console.log(userr.checkpassword("12345678"))
+
+//                              abstraction vs encapsulation
+/* abstraction
+= hide complexity (methods)
+= hides implementation details
+= achieved by public methods+private helpers
+= goal is to show only essential functionality
+= error when calling hidden private methods syntaxerror
+= true abstract enforcement not possible
+
+   encapsulation
+= hides data (fields)
+= achieved by private fields and setter/getter
+= goal is to protect internal state
+= error when accessing private field syntaxerror   
+*/
+
+
+
+
