@@ -394,5 +394,117 @@ console.log(userr.checkpassword("12345678"))
 */
 
 
+//                                    inheritance
+//this is mechanism where one class can reuse properties and methods of another class
+//goal us code resuablility and logical hierarchy
+//in js it is achieved using extends keyword in es6 classes or prototyping chaining
+class animal{       //this is the base/parent class
+    constructor(name){
+        this.name = name;
+    }
+    speak(){
+        console.log(`${this.name} makes a sound`)
+    }
+}
+class dog extends animal{  //this is derived class from animal
+    constructor(name,breed){
+        super(name)        //call parent constructor using super keyword otherwise will not access of parent constructor 
+        //if child class do not have any constructor then it aumatically inherit parent constructor
+        //but when child class has its own contructor then it must use the super keyword to access parent class contructor 
+        this.breed=breed
+    }
+    speak(){  //this is overriding
+        console.log(`${this.name} barks`)
+    }
+}
+const newanimal = new animal("creature")
+newanimal.speak()  //creature makes a sound
+const doggy = new dog("buddy","golden retriever")
+doggy.speak()  //buddy barks
+
+
+//                                   polymorphism
+//ability of different classes to provide different implementation of the same method
+//same interface different behavior
+//achived using method overriding(runtime polymorphism) and method overloading (limited, simulated)
+class Shape {
+    draw() {
+        console.log("Drawing a generic shape...");
+    }
+}
+class Circle extends Shape {
+    // Overriding the parent's draw method
+    draw() {
+        console.log("Drawing a Circle ⭕");
+    }
+}
+class Square extends Shape {
+    // Overriding the parent's draw method
+    draw() {
+        console.log("Drawing a Square ⬜");
+    }
+}
+// Polymorphism in action
+const shapes = [new Circle(), new Square(), new Shape()];
+shapes.forEach(shape => {
+    shape.draw(); // Same method name, different results!
+});
+
+
+
+
+//                                   overriding
+//when a subclass has its own implementation of a method that is already defined in the parent class
+//allow customizing or extending behaviour in derived classes
+// Base class
+class Vehicle {
+  start() {
+    console.log("The vehicle starts.");
+  }
+}
+// Derived class overrides the start method
+class Cars extends Vehicle {
+  start() {
+    console.log("The car engine roars to life.");
+  }
+}
+// Another derived class
+class Bicycle extends Vehicle {
+  start() {
+    console.log("The bicycle begins moving as you pedal.");
+  }
+}
+const v = new Vehicle();
+v.start(); // ✅ "The vehicle starts."
+const c = new Cars();
+c.start(); // ✅ "The car engine roars to life."
+const b = new Bicycle();
+b.start(); // ✅ "The bicycle begins moving as you pedal."
+
+
+//                                overloading
+//having multiple methods with the same name but different parameters list
+//in js if you declare two methods with the same name, the last one overwrites the previous one
+//Instead, JavaScript achieves similar behavior using:
+//               Default parameters
+//               Checking argument types/length inside a single method
+//               The arguments object or rest parameters (...args)
+class Calculator {
+  add(...args) {
+    if (args.length === 2) {
+      return args[0] + args[1];
+    } else if (args.length === 3) {
+      return args[0] + args[1] + args[2];
+    } else {
+      throw new Error("Unsupported number of arguments");
+    }
+  }
+}
+const calc = new Calculator();
+console.log(calc.add(2, 3));       // 5
+console.log(calc.add(2, 3, 4));    // 9
+
+
+
 
 
