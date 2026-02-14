@@ -508,3 +508,34 @@ console.log(calc.add(2, 3, 4));    // 9
 
 
 
+//                                   singleton object
+// A singleton is a design pattern that ensures only one instance of an object is created throughout the application. Instead of creating multiple instances, you reuse the same one. This is useful for things like configuration settings, logging, or managing a shared resource.
+//js does not have a built in singleton keyword
+// you can implement it using object literals. modules, classes with static instance checks
+// Simple singleton using object literal
+const Config = {
+  appName: "MyApp",
+  version: "1.0.0",
+  getInfo() {
+    return `${this.appName} v${this.version}`;
+  }
+};
+console.log(Config.getInfo()); // ✅ "MyApp v1.0.0"
+// No matter where you use 'Config', it's always the same object.
+Object.freeze(Config); // Optional: prevents anyone from changing it.
+
+
+
+
+
+
+/*
+⚠️ Error Cases
+Class-based Singleton:
+Forgetting to check Logger.instance → multiple instances created.
+
+Module-based Singleton:
+If you import the module with different paths (like ./logger.js vs ../logger.js), you might accidentally get separate instances depending on bundler behavior.
+
+Object Literal Singleton:
+No error, but you can’t prevent someone from cloning it (Object.assign({}, Config)).*/
