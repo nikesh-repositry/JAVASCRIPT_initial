@@ -1,1 +1,66 @@
+I. Client-Server Architecture
+The modern web operates on a request-response cycle between two primary entities:
 
+Client: The front-end interface (browser, mobile app, or web application) used by the end-user. It is responsible for the visual presentation (HTML/CSS) and capturing user actions.
+
+Server: A remote system where the application logic and data (Database) reside. It stores user accounts, products, and global application data.
+
+The Interaction Process:
+Request: When a user performs an action (e.g., clicking a "Profile" button), the Client sends a request to the Server. This request often includes specific identifiers like an email or a token.
+
+Logic Execution: The Server receives the request, identifies the user, and fetches the relevant data from the database.
+
+Response: The Server sends the data back to the Client.
+
+Presentation: The Client receives the data and renders it visually for the user.
+
+
+
+
+
+
+
+II. JSON (JavaScript Object Notation)
+JSON is the standard lightweight data-interchange format used for transmitting data between a server and a web application.
+
+Key Characteristics:
+Structure: It is a collection of key-value pairs, closely resembling JavaScript Objects.
+
+Syntax Rules: * Keys must be wrapped in double quotes (e.g., "name": "Arjun").
+
+String values must also be in double quotes.
+
+No trailing commas after the last property.
+
+Data Types Supported: Numbers, Strings, Booleans, Null, Arrays, and Nested Objects.
+
+Data Types NOT Supported: Functions, Date objects, and undefined.
+
+Core Methods in JavaScript:
+JSON.stringify(object): Converts a JavaScript object into a JSON string. This is useful when sending data to a server or storing it in local storage.
+
+JSON.parse(string): Converts a JSON string back into a JavaScript object so the data can be manipulated in code.
+
+
+
+
+
+
+III. Application Programming Interface (API)
+An API acts as a "broker" or "interface" between the Client and the Server. It defines a set of rules and protocols for how different software components should interact.
+
+1. Why use APIs?
+Language Independence: The server could be written in Python, C++, or Node.js, and the client in JavaScript. The API allows them to communicate regardless of the underlying language.
+
+Code Reusability: A single API can serve data to a website, an Android app, and an iOS app simultaneously.
+
+Abstraction: The Client doesn't need to know how the server works internally; it only needs to know which "endpoint" to call to get data.
+
+Security & Control: APIs can be restricted using "API Keys," allowing developers to monitor usage, limit requests (rate-limiting), or charge for access.
+
+2. The "Waiter" Analogy:
+Customer (Client): Wants food and looks at the menu.
+
+Kitchen (Server): Where the food is prepared.
+
+Waiter (API): Takes the customer's order, communicates it to the kitchen, and brings the food back to the customer. The customer doesn't need to enter the kitchen or know how to cook.
