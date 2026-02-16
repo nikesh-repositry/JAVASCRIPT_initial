@@ -1,3 +1,11 @@
-# **JAVASCRIPT**
+<h1 align="center"><b>JAVASCRIPT</b></h1>
+
 ### THIS REPOSITORY I MADE BY MYSELF CONTAINING CODE, CONCEPT, TOPICS EXPLANATIOIN THAT IS ALL COMES UNDER THE LANGUAGE JAVASCRIPT.
-- I built this repository alongside learning the JavaScript language to have my codes and resources online in my account. - It serves as a seamless access point and anytime revision source for myself. - Other than me, anyone can access this repository. - I know it does not contain very high production-level code snippets, but it is enough to build a foundational familiarity with the language. - This repository has sufficient material to put my hands on real-world project building. - It supports continuous learning while building projects. - For efficient overview, the repository consists of the following topics.
+- I built this repository alongside learning the JavaScript language to have my codes and resources online in my account.
+- It serves as a seamless access point and anytime revision source for myself.
+- Other than me, anyone can access this repository. 
+- I know it does not contain very high production-level code snippets, but it is enough to build a foundational familiarity with the language.
+- This repository has sufficient material to put my hands on real-world project building. 
+- It supports continuous learning while building projects. 
+<p align="center">For efficient overview, the repository consists of the following topics.</p>
+
