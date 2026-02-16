@@ -1,6 +1,3 @@
 # **JAVASCRIPT**
 ### THIS REPOSITORY I MADE BY MYSELF CONTAINING CODE, CONCEPT, TOPICS EXPLANATIOIN THAT IS ALL COMES UNDER THE LANGUAGE JAVASCRIPT.
-I BUILT THIS REPOSITORY ALONG SIDE BY SIDE LEARNING LANGUAGE JAVASCRIPT TO HAVE MY CODES AND RESOURCES ONLINE IN MY ACCOUNT TO HAVE SEEMLESS ACCESS AND A ANYTIME REVESION SOURCE FOR MYSELF.
-OTHER THAN MINE ANYONE CAN ACCESS THIS AS I KNOW THIS DO NOT CONTAINED THE VERY HIGHER PRODUCTION LEVEL CODE SNIPPET BUT IT IS ENOUGH JUST TO GET A FOUNDATION FAMILARITY WITH THE LANGUAGE.
-ALSO THIS REPOSITORY HAS ENOUGH TO PUT MY HANDS ON REAL WORLD PROJECT BUILDING AND ALONG WITH BUILDING LEARNING CONTINOUS.
-FOR EFFICIENT OVERVIEW THESE ARE THE BELOW TOPICS CONSIST INSIDE THIS REPOSITORY.
+- I built this repository alongside learning the JavaScript language to have my codes and resources online in my account. - It serves as a seamless access point and anytime revision source for myself. - Other than me, anyone can access this repository. - I know it does not contain very high production-level code snippets, but it is enough to build a foundational familiarity with the language. - This repository has sufficient material to put my hands on real-world project building. - It supports continuous learning while building projects. - For efficient overview, the repository consists of the following topics.
