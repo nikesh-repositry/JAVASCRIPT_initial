@@ -1,1 +1,7 @@
-
+local storage and session storage
+=both localstorage and sessonStorage are part of the web storage Api used to store key-value pairs in the browser
+=store data in the browser (no server needed)
+=improve user experience (keep user settings and user specific data)
+=fast and easy access
+=easy to use api
+=foundation for advanced topics(indexDB, cookies, PWA)
