@@ -36,3 +36,25 @@ clear(): Deletes all data in that storage.
 key(index): Gets the name of the key at a specific numeric index.
 length: Property that returns the number of items stored.
 
+
+
+
+Output Visualization
+In the browser, you can see this data by:
+Right-clicking and choosing Inspect.
+Going to the Application tab.
+Selecting Local Storage or Session Storage in the left sidebar.
+
+
+
+
+
+
+
+Key Considerations (Production Tips)
+Security: Never store sensitive data like passwords or private tokens here. They are easily accessible via JavaScript (vulnerable to XSS attacks).
+
+Same-Origin Policy: Data is isolated by domain. For example, data saved on site-a.com cannot be accessed by site-b.com.
+
+Profiles: Storage is browser and profile-specific. Data in Chrome's "Profile A" won't appear in Chrome's "Profile B" or in Incognito mode.
+
