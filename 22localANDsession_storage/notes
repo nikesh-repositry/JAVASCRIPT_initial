@@ -5,3 +5,34 @@ local storage and session storage
 =fast and easy access
 =easy to use api
 =foundation for advanced topics(indexDB, cookies, PWA)
+
+
+well both are part of the web storage API and they allow you to store data in browser in key-value pair
+its capacity is roughly between 5 to 10mb
+the data is always stored in string
+the retrieval is synchronous and faster than fetching from a server
+
+
+
+local storage
+=the data persists even if the browser/tab is closed
+=shared across all tabs/windows of the same origin
+=used in settings like dark mode or user perferences 
+
+session storage
+=data is cleared when the tab or window is closed
+=limited to the specific tab where it was created
+=used in temporary data like a single session form or ID
+
+
+
+
+Essential Methods
+The methods are identical for both localStorage and sessionStorage.
+setItem(key, value): Saves data.
+getItem(key): Retrieves data using the key.
+removeItem(key): Deletes a specific item.
+clear(): Deletes all data in that storage.
+key(index): Gets the name of the key at a specific numeric index.
+length: Property that returns the number of items stored.
+
