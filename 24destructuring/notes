@@ -1,1 +1,21 @@
+destructuring is a js expression used to unpack values from arrays or properties from objects into distinct variables
+code file contains
+destructuring with array
+code example
+default values
+skip array item
+swapping values
+nested arrays
 
+
+destructuring with objects
+code example
+destructuring with rest operators
+default values
+renaming values
+nested objects
+
+
+destructuring in function 
+
+object destructuring in function parameters
