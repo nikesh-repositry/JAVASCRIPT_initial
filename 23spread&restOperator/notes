@@ -1,1 +1,17 @@
+spread and rest both operator use three dots(...) syntax but do different things based on context.
+spread operator expands/unpacks values
+rest operator collects/packs values
 
+use case of spread operator:
+=spread array
+=add elements with elements of another array
+=copying array
+=merging array
+=spread string
+=spread in function
+=spread in object
+=merging objects
+
+use case of rest operator
+=rest in function
+=destructuring
